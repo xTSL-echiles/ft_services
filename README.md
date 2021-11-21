@@ -32,7 +32,7 @@ You will discover cluster deployment and management with Kubernetes. You are goi
 * Alpine Linux: Is a Linux distribution based on musl and BusyBox, which aims to be lightweigth and secure by default.
 
 # How to start:
-
+change IP adderes in /src/loadconf.yaml to your local IPV4
 macOS:
 * Setup Minikube
 * Setupe VMvirtual box
