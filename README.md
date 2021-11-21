@@ -1,9 +1,9 @@
 # ft_services
 You will discover cluster deployment and management with Kubernetes. You are going to do what is called "clustering". The project consists of implementing an infrastructure with different services. For this, we will use Kubernetes. Each service works in a dedicated container, and the containers have the same name as the associated service. For performance reasons the containers are built on Alpine Linux. To complete the project we need the next components:
 
- 
+ # Components
 ![alt-текст](https://github.com/xTSL-echiles/ft_services/blob/main/scheme.png "How does it look: ")
-# Components
+
  * MetalLB: Is a Load Balancer that manages external access to its services. It is the only entrance to the cluster.
 
 * Nginx: Is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP/UDP proxy server.
