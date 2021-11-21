@@ -45,7 +45,7 @@ Windows:
 * Setup Minikude
 * Setup HyperV
 * Setup Docker
-* open PowerShell as amdinistrator and execute:
+* open PowerShell as amdinistrator and execute:  
 cd .\srcs\  
 ---minikube  
 minikube start --driver=hyperv  
