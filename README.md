@@ -57,21 +57,21 @@ kubectl apply -f nginx/srcs/nginx.yaml
 ---mysql  
 docker build -t mysql_image ./mysql  
 kubectl apply -f mysql/mysql-conf.yaml  
-kubectl apply -f mysql/mysql-pvc.yaml
----W_P
-docker build -t wordpress-image ./wordpress
-kubectl apply -f wordpress/wp-conf.yaml
----PHP
-docker build -t php-image ./phpmyadmin
-kubectl apply -f ./phpmyadmin/php-conf.yaml
----ftps
-docker build -t ftp-image ./ftps # в конф файле не забыть поменять IP на миникубовский
+kubectl apply -f mysql/mysql-pvc.yaml  
+---W_P  
+docker build -t wordpress-image ./wordpress  
+kubectl apply -f wordpress/wp-conf.yaml  
+---PHP  
+docker build -t php-image ./phpmyadmin  
+kubectl apply -f ./phpmyadmin/php-conf.yaml  
+---ftps  
+docker build -t ftp-image ./ftps  
 kubectl apply -f ./ftps/ftp-conf.yaml 
 ---influxDB
-docker build -t influxdb_image .\influxdb\
-kubectl apply -f ./influxdb/influxdb.yaml
----grafano
-docker build -t grafana_image ./grafana/ 
-kubectl apply -f ./grafana/grafana.yaml
----dashboard
-minikube dashboard
+docker build -t influxdb_image .\influxdb\  
+kubectl apply -f ./influxdb/influxdb.yaml  
+---grafano  
+docker build -t grafana_image ./grafana/  
+kubectl apply -f ./grafana/grafana.yaml  
+---dashboard  
+minikube dashboard  
