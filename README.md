@@ -44,19 +44,19 @@ Windows:
 * Setup HyperV
 * Setup Docker
 * open PowerShell as amdinistrator and execute:
-> cd .\srcs\
----minikube
-minikube start --driver=hyperv
-minikube docker-env
-minikube addons enable metallb
-minikube addons enable dashboard
----nginx
-docker build -t nginx_image ./nginx
-kubectl apply -f loadconf.yaml
-kubectl apply -f nginx/srcs/nginx.yaml
----mysql
-docker build -t mysql_image ./mysql
-kubectl apply -f mysql/mysql-conf.yaml
+cd .\srcs\  
+---minikube  
+minikube start --driver=hyperv  
+minikube docker-env  
+minikube addons enable metallb  
+minikube addons enable dashboard  
+---nginx  
+docker build -t nginx_image ./nginx  
+kubectl apply -f loadconf.yaml  
+kubectl apply -f nginx/srcs/nginx.yaml  
+---mysql  
+docker build -t mysql_image ./mysql  
+kubectl apply -f mysql/mysql-conf.yaml  
 kubectl apply -f mysql/mysql-pvc.yaml
 ---W_P
 docker build -t wordpress-image ./wordpress
