@@ -1,0 +1,51 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  annotations: 
+    metallb.universe.tf/allow-shared-ip: metalIP
+spec:
+  selector:
+    app: nginx
+  ports:
+    - protocol: TCP
+      name: http
+      port: 80
+      targetPort: 80
+    - protocol: TCP
+      name: https
+      port: 443
+      targetPort: 443
+    - protocol: TCP
+      name: ssh
+      port: 22
+      targetPort: 22
+  type: LoadBalancer
+...
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+spec:
+  replicas: 1
+  selector: #c какими подами будет работать
+    matchLabels:
+      app: nginx # не важно как называть и что тут указывать, главное запомнить
+  template:
+    metadata:
+      labels: 
+        app: nginx # копируем из app выше
+    spec: #cпецификация какие именно контейнеры
+      containers:
+      - name: nginx
+        image: nginx_image 
+        imagePullPolicy: Never #не даем качать Image из докерхаба
+        ports:
+        - containerPort: 80
+        - containerPort: 22
+        - containerPort: 443
+...
